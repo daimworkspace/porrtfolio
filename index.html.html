@@ -542,6 +542,10 @@
             transition: var(--transition);
         }
 
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
         .portfolio-overlay {
             position: absolute;
             top: 0;
@@ -616,6 +620,63 @@
         }
 
         .thumbnail-designs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* Cup Designs Section - Hidden by default */
+        .cup-designs {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .cup-designs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* T-Shirt Designs Section - Hidden by default */
+        .tshirt-designs {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .tshirt-designs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* Instagram Posts Section - Hidden by default */
+        .instagram-posts {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .instagram-posts::before {
             content: '';
             position: absolute;
             top: 0;
@@ -740,6 +801,338 @@
         }
 
         .view-details-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Cup Designs Grid */
+        .cup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cup-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .cup-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .cup-model {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px 20px;
+        }
+
+        .cup-display {
+            position: relative;
+            width: 180px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cup-shape {
+            position: relative;
+            width: 120px;
+            height: 160px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 10px 10px 40px 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .cup-handle {
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 0 15px 15px 0;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cup-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        /* Different black pattern variations */
+        .cup-design-1 .cup-pattern {
+            background: radial-gradient(circle at 30% 30%, rgba(108, 99, 255, 0.3) 0%, transparent 50%),
+                       linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+        }
+
+        .cup-design-2 .cup-pattern {
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%),
+                       linear-gradient(-45deg, transparent 40%, rgba(108, 99, 255, 0.2) 50%, transparent 60%);
+        }
+
+        .cup-design-3 .cup-pattern {
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.15) 10px, rgba(255, 255, 255, 0.15) 20px);
+        }
+
+        .cup-design-4 .cup-pattern {
+            background: radial-gradient(circle at 70% 70%, rgba(108, 99, 255, 0.3) 0%, transparent 30%),
+                       radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+        }
+
+        .cup-design-5 .cup-pattern {
+            background: linear-gradient(90deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%),
+                       linear-gradient(0deg, transparent 40%, rgba(108, 99, 255, 0.2) 50%, transparent 60%);
+        }
+
+        .cup-box:hover .cup-shape {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .cup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .cup-box:hover .cup-overlay {
+            opacity: 1;
+        }
+
+        .cup-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .cup-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-cup-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-cup-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* T-Shirt Designs Grid */
+        .tshirt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tshirt-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 450px;
+            background-color: white;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .tshirt-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .tshirt-model {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        }
+
+        .tshirt-view img {
+            width: 220px;
+            height: auto;
+            filter: brightness(1);
+        }
+
+        .tshirt-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .tshirt-box:hover .tshirt-overlay {
+            opacity: 1;
+        }
+
+        .tshirt-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .tshirt-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-design-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-design-btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Instagram Posts Grid */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .instagram-post {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .instagram-post:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .instagram-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .instagram-post:hover img {
+            transform: scale(1.05);
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        .instagram-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .instagram-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-post-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-post-btn:hover {
             background-color: var(--dark-color);
             color: white;
             transform: translateY(-3px);
@@ -1252,7 +1645,10 @@
             }
             
             .portfolio-grid,
-            .thumbnails-grid {
+            .thumbnails-grid,
+            .cup-grid,
+            .tshirt-grid,
+            .instagram-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1452,7 +1848,7 @@
                     <div class="portfolio-overlay">
                         <h3>Fitness Brand Post</h3>
                         <p>Instagram • 2.5k likes</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showInstagramPosts()">View Project</div>
                     </div>
                 </div>
                 
@@ -1492,7 +1888,7 @@
                     <div class="portfolio-overlay">
                         <h3>Band Merchandise</h3>
                         <p>Custom t-shirt design for music band</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showTshirtDesigns()">View Project</div>
                     </div>
                 </div>
                 
@@ -1502,7 +1898,7 @@
                     <div class="portfolio-overlay">
                         <h3>Coffee Mug Design</h3>
                         <p>Custom illustration for coffee shop merchandise</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showCupDesigns()">View Project</div>
                     </div>
                 </div>
             </div>
@@ -1575,6 +1971,262 @@
                         <h3>Professional Layout</h3>
                         <p>Well-structured design with balanced composition</p>
                         <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal5')">View Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cup Designs Section - Hidden by default -->
+    <section class="cup-designs" id="cup-designs">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Cup <span>Designs</span></h2>
+                    <p class="section-subtitle">Beautiful black cup designs perfect for merchandise or gifts</p>
+                </div>
+                <div class="close-section-btn" onclick="closeCupDesigns()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="cup-grid">
+                <!-- Cup Design 1 -->
+                <div class="cup-box cup-design-1" onclick="openModal('modal-cup1')">
+                    <div class="cup-model">
+                        <div class="cup-display">
+                            <div class="cup-shape">
+                                <div class="cup-pattern"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                    </div>
+                    <div class="cup-overlay">
+                        <h3>Midnight Geometric</h3>
+                        <p>Black with purple geometric accents</p>
+                        <div class="view-cup-btn" onclick="event.stopPropagation(); openModal('modal-cup1')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Cup Design 2 -->
+                <div class="cup-box cup-design-2" onclick="openModal('modal-cup2')">
+                    <div class="cup-model">
+                        <div class="cup-display">
+                            <div class="cup-shape">
+                                <div class="cup-pattern"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                    </div>
+                    <div class="cup-overlay">
+                        <h3>Onyx Crosshatch</h3>
+                        <p>Deep black with crosshatch pattern</p>
+                        <div class="view-cup-btn" onclick="event.stopPropagation(); openModal('modal-cup2')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Cup Design 3 -->
+                <div class="cup-box cup-design-3" onclick="openModal('modal-cup3')">
+                    <div class="cup-model">
+                        <div class="cup-display">
+                            <div class="cup-shape">
+                                <div class="cup-pattern"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                    </div>
+                    <div class="cup-overlay">
+                        <h3>Carbon Stripe</h3>
+                        <p>Matte black with subtle stripe pattern</p>
+                        <div class="view-cup-btn" onclick="event.stopPropagation(); openModal('modal-cup3')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Cup Design 4 -->
+                <div class="cup-box cup-design-4" onclick="openModal('modal-cup4')">
+                    <div class="cup-model">
+                        <div class="cup-display">
+                            <div class="cup-shape">
+                                <div class="cup-pattern"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                    </div>
+                    <div class="cup-overlay">
+                        <h3>Shadow Dots</h3>
+                        <p>Dark black with radial dot pattern</p>
+                        <div class="view-cup-btn" onclick="event.stopPropagation(); openModal('modal-cup4')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Cup Design 5 -->
+                <div class="cup-box cup-design-5" onclick="openModal('modal-cup5')">
+                    <div class="cup-model">
+                        <div class="cup-display">
+                            <div class="cup-shape">
+                                <div class="cup-pattern"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                    </div>
+                    <div class="cup-overlay">
+                        <h3>Ebony Grid</h3>
+                        <p>Rich black with grid pattern accents</p>
+                        <div class="view-cup-btn" onclick="event.stopPropagation(); openModal('modal-cup5')">View Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- T-Shirt Designs Section - Hidden by default -->
+    <section class="tshirt-designs" id="tshirt-designs">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">T-Shirt <span>Designs</span></h2>
+                    <p class="section-subtitle">Custom t-shirt designs that stand out and represent your brand or message</p>
+                </div>
+                <div class="close-section-btn" onclick="closeTshirtDesigns()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="tshirt-grid">
+                <!-- Design 1 -->
+                <div class="tshirt-box" onclick="openModal('modal-tshirt1')">
+                    <div class="tshirt-model">
+                        <div class="tshirt-view">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" alt="Urban Streetwear">
+                        </div>
+                    </div>
+                    <div class="tshirt-overlay">
+                        <h3>Urban Streetwear</h3>
+                        <p>Modern graphic design with urban vibes</p>
+                        <div class="view-design-btn" onclick="event.stopPropagation(); openModal('modal-tshirt1')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Design 2 -->
+                <div class="tshirt-box" onclick="openModal('modal-tshirt2')">
+                    <div class="tshirt-model">
+                        <div class="tshirt-view">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" alt="Vintage Retro">
+                        </div>
+                    </div>
+                    <div class="tshirt-overlay">
+                        <h3>Vintage Retro</h3>
+                        <p>Classic retro design with faded effects</p>
+                        <div class="view-design-btn" onclick="event.stopPropagation(); openModal('modal-tshirt2')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Design 3 -->
+                <div class="tshirt-box" onclick="openModal('modal-tshirt3')">
+                    <div class="tshirt-model">
+                        <div class="tshirt-view">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" alt="Minimalist Art">
+                        </div>
+                    </div>
+                    <div class="tshirt-overlay">
+                        <h3>Minimalist Art</h3>
+                        <p>Clean and simple artistic expression</p>
+                        <div class="view-design-btn" onclick="event.stopPropagation(); openModal('modal-tshirt3')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Design 4 -->
+                <div class="tshirt-box" onclick="openModal('modal-tshirt4')">
+                    <div class="tshirt-model">
+                        <div class="tshirt-view">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" alt="Geometric Patterns">
+                        </div>
+                    </div>
+                    <div class="tshirt-overlay">
+                        <h3>Geometric Patterns</h3>
+                        <p>Modern geometric design with bold colors</p>
+                        <div class="view-design-btn" onclick="event.stopPropagation(); openModal('modal-tshirt4')">View Design</div>
+                    </div>
+                </div>
+
+                <!-- Design 5 -->
+                <div class="tshirt-box" onclick="openModal('modal-tshirt5')">
+                    <div class="tshirt-model">
+                        <div class="tshirt-view">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" alt="Typography Focus">
+                        </div>
+                    </div>
+                    <div class="tshirt-overlay">
+                        <h3>Typography Focus</h3>
+                        <p>Bold typography with creative lettering</p>
+                        <div class="view-design-btn" onclick="event.stopPropagation(); openModal('modal-tshirt5')">View Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Posts Section - Hidden by default -->
+    <section class="instagram-posts" id="instagram-posts">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Instagram <span>Posts</span></h2>
+                    <p class="section-subtitle">Scroll-stopping Instagram content that grows your following and boosts engagement</p>
+                </div>
+                <div class="close-section-btn" onclick="closeInstagramPosts()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="instagram-grid">
+                <!-- Instagram Post 1 -->
+                <div class="instagram-post" onclick="openModal('modal-insta1')">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 1">
+                    <div class="instagram-overlay">
+                        <h3>Fitness Motivation</h3>
+                        <p>Engaging fitness post with motivational quote</p>
+                        <div class="view-post-btn" onclick="event.stopPropagation(); openModal('modal-insta1')">View Post</div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 2 -->
+                <div class="instagram-post" onclick="openModal('modal-insta2')">
+                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 2">
+                    <div class="instagram-overlay">
+                        <h3>Travel Inspiration</h3>
+                        <p>Beautiful travel destination with wanderlust theme</p>
+                        <div class="view-post-btn" onclick="event.stopPropagation(); openModal('modal-insta2')">View Post</div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 3 -->
+                <div class="instagram-post" onclick="openModal('modal-insta3')">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 3">
+                    <div class="instagram-overlay">
+                        <h3>Food & Recipe</h3>
+                        <p>Mouth-watering food photography with recipe</p>
+                        <div class="view-post-btn" onclick="event.stopPropagation(); openModal('modal-insta3')">View Post</div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 4 -->
+                <div class="instagram-post" onclick="openModal('modal-insta4')">
+                    <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 4">
+                    <div class="instagram-overlay">
+                        <h3>Fashion Style</h3>
+                        <p>Trendy fashion post with style inspiration</p>
+                        <div class="view-post-btn" onclick="event.stopPropagation(); openModal('modal-insta4')">View Post</div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 5 -->
+                <div class="instagram-post" onclick="openModal('modal-insta5')">
+                    <img src="https://images.unsplash.com/photo-1611162617263-4ec3060fb3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 5">
+                    <div class="instagram-overlay">
+                        <h3>Minimalist Design</h3>
+                        <p>Clean and modern minimalist aesthetic</p>
+                        <div class="view-post-btn" onclick="event.stopPropagation(); openModal('modal-insta5')">View Post</div>
                     </div>
                 </div>
             </div>
@@ -1791,6 +2443,114 @@
         </div>
     </div>
 
+    <!-- Fullscreen Modals for Cup Designs -->
+    <div id="modal-cup1" class="modal" onclick="closeModal('modal-cup1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-cup1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwY3VwJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Midnight Geometric Cup" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-cup2" class="modal" onclick="closeModal('modal-cup2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-cup2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1577937927131-a4c66ccd746a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsYWNrJTIwY3VwJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Onyx Crosshatch Cup" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-cup3" class="modal" onclick="closeModal('modal-cup3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-cup3')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwY3VwJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Carbon Stripe Cup" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-cup4" class="modal" onclick="closeModal('modal-cup4')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-cup4')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1577937927131-a4c66ccd746a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsYWNrJTIwY3VwJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Shadow Dots Cup" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-cup5" class="modal" onclick="closeModal('modal-cup5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-cup5')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwY3VwJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Ebony Grid Cup" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Fullscreen Modals for T-Shirt Designs -->
+    <div id="modal-tshirt1" class="modal" onclick="closeModal('modal-tshirt1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-tshirt1')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-tshirt2" class="modal" onclick="closeModal('modal-tshirt2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-tshirt2')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-tshirt3" class="modal" onclick="closeModal('modal-tshirt3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-tshirt3')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-tshirt4" class="modal" onclick="closeModal('modal-tshirt4')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-tshirt4')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-tshirt5" class="modal" onclick="closeModal('modal-tshirt5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-tshirt5')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/09/30/blank-1886001_1280.png" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Fullscreen Modals for Instagram Posts -->
+    <div id="modal-insta1" class="modal" onclick="closeModal('modal-insta1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-insta1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 1" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-insta2" class="modal" onclick="closeModal('modal-insta2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-insta2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 2" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-insta3" class="modal" onclick="closeModal('modal-insta3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-insta3')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 3" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-insta4" class="modal" onclick="closeModal('modal-insta4')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-insta4')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 4" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-insta5" class="modal" onclick="closeModal('modal-insta5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-insta5')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162617263-4ec3060fb3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5zdGFncmFtJTIwcG9zdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Instagram Post Design 5" class="modal-img">
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
@@ -1882,7 +2642,7 @@
             
             // Animation on scroll
             function animateOnScroll() {
-                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box');
+                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -1896,7 +2656,7 @@
             }
             
             // Set initial state for animated elements
-            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box');
+            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post');
             animatedElements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
@@ -1914,6 +2674,9 @@
         function showThumbnailDesigns() {
             const thumbnailSection = document.getElementById('thumbnail-designs');
             if (thumbnailSection) {
+                // Hide other sections
+                hideAllSections();
+                
                 // Show the section
                 thumbnailSection.style.display = 'block';
                 
@@ -1936,6 +2699,93 @@
             }
         }
 
+        // Function to show cup designs section
+        function showCupDesigns() {
+            const cupSection = document.getElementById('cup-designs');
+            if (cupSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                cupSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: cupSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the cup boxes
+                setTimeout(() => {
+                    const cupBoxes = document.querySelectorAll('.cup-box');
+                    cupBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to show t-shirt designs section
+        function showTshirtDesigns() {
+            const tshirtSection = document.getElementById('tshirt-designs');
+            if (tshirtSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                tshirtSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: tshirtSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the t-shirt boxes
+                setTimeout(() => {
+                    const tshirtBoxes = document.querySelectorAll('.tshirt-box');
+                    tshirtBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to show instagram posts section
+        function showInstagramPosts() {
+            const instagramSection = document.getElementById('instagram-posts');
+            if (instagramSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                instagramSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: instagramSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the instagram posts
+                setTimeout(() => {
+                    const instagramPosts = document.querySelectorAll('.instagram-post');
+                    instagramPosts.forEach((post, index) => {
+                        setTimeout(() => {
+                            post.style.opacity = '1';
+                            post.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
         // Function to close thumbnail designs section
         function closeThumbnailDesigns() {
             const thumbnailSection = document.getElementById('thumbnail-designs');
@@ -1952,6 +2802,77 @@
                     });
                 }
             }
+        }
+
+        // Function to close cup designs section
+        function closeCupDesigns() {
+            const cupSection = document.getElementById('cup-designs');
+            if (cupSection) {
+                // Hide the section
+                cupSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to close t-shirt designs section
+        function closeTshirtDesigns() {
+            const tshirtSection = document.getElementById('tshirt-designs');
+            if (tshirtSection) {
+                // Hide the section
+                tshirtSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to close instagram posts section
+        function closeInstagramPosts() {
+            const instagramSection = document.getElementById('instagram-posts');
+            if (instagramSection) {
+                // Hide the section
+                instagramSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to hide all detail sections
+        function hideAllSections() {
+            const sections = [
+                'thumbnail-designs',
+                'cup-designs',
+                'tshirt-designs',
+                'instagram-posts'
+            ];
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.style.display = 'none';
+                }
+            });
         }
 
         // Function to open modal
