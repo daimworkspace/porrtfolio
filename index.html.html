@@ -612,6 +612,25 @@
             margin-bottom: 20px;
         }
 
+        /* Logo Designs Section - Hidden by default */
+        .logo-designs {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .logo-designs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
         /* Thumbnail Designs Section - Hidden by default */
         .thumbnail-designs {
             background-color: var(--light-color);
@@ -688,6 +707,63 @@
             z-index: 0;
         }
 
+        /* Business Brand Kits Section - Hidden by default */
+        .brand-kits {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .brand-kits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* LinkedIn Banners Section - Hidden by default */
+        .linkedin-banners {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .linkedin-banners::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        /* YouTube Channel Art Section - Hidden by default */
+        .youtube-channel-art {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .youtube-channel-art::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
         .section-header {
             position: relative;
             display: flex;
@@ -721,6 +797,98 @@
             box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
         }
 
+        /* Logo Designs Grid */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .logo-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .logo-box img {
+            max-width: 80%;
+            max-height: 60%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .logo-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .logo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .logo-box:hover .logo-overlay {
+            opacity: 1;
+        }
+
+        .logo-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-logo-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-logo-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Thumbnails Grid */
         .thumbnails-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -1133,6 +1301,540 @@
         }
 
         .view-post-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Business Brand Kits Grid */
+        .kits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .kit-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 500px;
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .kit-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .kit-preview {
+            width: 100%;
+            height: 60%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+        }
+
+        .kit-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .kit-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .kit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .item-business-card {
+            width: 180px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .item-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .item-letterhead {
+            width: 150px;
+            height: 80px;
+            background: white;
+            border-top: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+
+        .item-envelope {
+            width: 120px;
+            height: 70px;
+            background: white;
+            border: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .item-envelope::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 10px;
+            right: 10px;
+            height: 10px;
+            background: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .kit-info {
+            padding: 25px;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .kit-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .kit-info p {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+
+        .kit-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .feature-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .kit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.9), rgba(77, 68, 219, 0.95));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .kit-box:hover .kit-overlay {
+            opacity: 1;
+        }
+
+        .kit-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .kit-overlay p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .kit-overlay ul {
+            margin-bottom: 25px;
+        }
+
+        .kit-overlay ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .kit-overlay ul li i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .view-kit-btn {
+            align-self: flex-start;
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-kit-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Service Explanation */
+        .service-explanation {
+            margin-top: 80px;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .explanation-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .explanation-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .explanation-item:hover .explanation-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .explanation-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .explanation-item p {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        /* LinkedIn Banners Grid */
+        .banners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 250px; /* Scaled down from LinkedIn's 1584x396 ratio */
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .banner-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .banner-preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .banner-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-content p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .banner-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .banner-design-1 .banner-pattern {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+        }
+
+        .banner-design-2 .banner-pattern {
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.2) 40%, transparent 50%),
+                linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.1) 70%, transparent 80%);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .banner-box:hover .banner-overlay {
+            opacity: 1;
+        }
+
+        .banner-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .banner-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-banner-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-banner-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* YouTube Channel Art Grid */
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .youtube-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 280px; /* Scaled down from YouTube's 2560x1440 ratio */
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .youtube-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .youtube-preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .youtube-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .youtube-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .youtube-content p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .youtube-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .youtube-design-1 .youtube-pattern {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+        }
+
+        .youtube-design-2 .youtube-pattern {
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.2) 40%, transparent 50%),
+                linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.1) 70%, transparent 80%);
+        }
+
+        .youtube-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .youtube-box:hover .youtube-overlay {
+            opacity: 1;
+        }
+
+        .youtube-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .youtube-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-youtube-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-youtube-btn:hover {
             background-color: var(--dark-color);
             color: white;
             transform: translateY(-3px);
@@ -1646,9 +2348,13 @@
             
             .portfolio-grid,
             .thumbnails-grid,
+            .logo-grid,
             .cup-grid,
             .tshirt-grid,
-            .instagram-grid {
+            .instagram-grid,
+            .kits-grid,
+            .banners-grid,
+            .youtube-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1679,6 +2385,21 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .banners-grid,
+            .youtube-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .banner-box,
+            .youtube-box {
+                height: 200px;
+            }
+            
+            .service-explanation {
+                padding: 30px 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1708,6 +2429,33 @@
                 height: 80px;
                 bottom: -5px;
                 right: -5px;
+            }
+            
+            .banner-box,
+            .youtube-box {
+                height: 180px;
+            }
+            
+            .banner-content h3,
+            .youtube-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .banner-content p,
+            .youtube-content p {
+                font-size: 0.9rem;
+            }
+            
+            .kit-box {
+                height: 500px;
+            }
+            
+            .kit-preview {
+                height: 55%;
+            }
+            
+            .kit-info {
+                height: 45%;
             }
         }
     </style>
@@ -1858,7 +2606,7 @@
                     <div class="portfolio-overlay">
                         <h3>Coffee Shop Logo</h3>
                         <p>Brand Identity</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showLogoDesigns()">View Project</div>
                     </div>
                 </div>
                 
@@ -1868,7 +2616,7 @@
                     <div class="portfolio-overlay">
                         <h3>YouTube Channel Art</h3>
                         <p>Gaming Channel</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showYoutubeChannelArt()">View Project</div>
                     </div>
                 </div>
                 
@@ -1878,7 +2626,17 @@
                     <div class="portfolio-overlay">
                         <h3>Corporate Branding Kit</h3>
                         <p>Business cards, letterhead, and social media templates</p>
-                        <div class="view-project-btn">View Project</div>
+                        <div class="view-project-btn" onclick="showBrandKits()">View Project</div>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn Banner Designs -->
+                <div class="portfolio-item" data-category="banner">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGlua2VkaW4lMjBiYW5uZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="LinkedIn Banner Design">
+                    <div class="portfolio-overlay">
+                        <h3>LinkedIn Profile Banner</h3>
+                        <p>Professional branding</p>
+                        <div class="view-project-btn" onclick="showLinkedInBanners()">View Project</div>
                     </div>
                 </div>
                 
@@ -1906,6 +2664,73 @@
             <div class="portfolio-cta">
                 <p>Want to see more of my work?</p>
                 <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Designs Section - Hidden by default -->
+    <section class="logo-designs" id="logo-designs">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Logo <span>Designs</span></h2>
+                    <p class="section-subtitle">Memorable logos that perfectly represent your brand identity and values</p>
+                </div>
+                <div class="close-section-btn" onclick="closeLogoDesigns()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="logo-grid">
+                <!-- Logo Design 1 -->
+                <div class="logo-box" onclick="openModal('modal-logo1')">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_1280.png" alt="Yoga Studio Logo">
+                    <div class="logo-overlay">
+                        <h3>Zen Yoga Studio</h3>
+                        <p>Minimalist logo for wellness brand</p>
+                        <div class="view-logo-btn" onclick="event.stopPropagation(); openModal('modal-logo1')">View Logo</div>
+                    </div>
+                </div>
+
+                <!-- Logo Design 2 -->
+                <div class="logo-box" onclick="openModal('modal-logo2')">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/31/23/42/animal-2028258_1280.png" alt="Coffee Shop Logo">
+                    <div class="logo-overlay">
+                        <h3>Brew & Bean Café</h3>
+                        <p>Vintage coffee shop branding</p>
+                        <div class="view-logo-btn" onclick="event.stopPropagation(); openModal('modal-logo2')">View Logo</div>
+                    </div>
+                </div>
+
+                <!-- Logo Design 3 -->
+                <div class="logo-box" onclick="openModal('modal-logo3')">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.png" alt="Tech Company Logo">
+                    <div class="logo-overlay">
+                        <h3>Nexus Tech</h3>
+                        <p>Modern technology company logo</p>
+                        <div class="view-logo-btn" onclick="event.stopPropagation(); openModal('modal-logo3')">View Logo</div>
+                    </div>
+                </div>
+
+                <!-- Logo Design 4 -->
+                <div class="logo-box" onclick="openModal('modal-logo4')">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/19/21/01/book-1840614_1280.png" alt="Bookstore Logo">
+                    <div class="logo-overlay">
+                        <h3>Page Turner Books</h3>
+                        <p>Literary bookstore identity</p>
+                        <div class="view-logo-btn" onclick="event.stopPropagation(); openModal('modal-logo4')">View Logo</div>
+                    </div>
+                </div>
+
+                <!-- Logo Design 5 -->
+                <div class="logo-box" onclick="openModal('modal-logo5')">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/19/18/57/gorilla-1840630_1280.png" alt="Fitness Brand Logo">
+                    <div class="logo-overlay">
+                        <h3>Alpha Fitness</h3>
+                        <p>Strong fitness brand identity</p>
+                        <div class="view-logo-btn" onclick="event.stopPropagation(); openModal('modal-logo5')">View Logo</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2233,6 +3058,309 @@
         </div>
     </section>
 
+    <!-- Business Brand Kits Section - Hidden by default -->
+    <section class="brand-kits" id="brand-kits">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Business <span>Brand Kits</span></h2>
+                    <p class="section-subtitle">Complete branding packages including business cards, letterheads, and social media assets</p>
+                </div>
+                <div class="close-section-btn" onclick="closeBrandKits()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="kits-grid">
+                <!-- Brand Kit 1 - Professional Corporate -->
+                <div class="kit-box" onclick="openModal('modal-kit1')">
+                    <div class="kit-preview">
+                        <div class="kit-items">
+                            <div class="kit-item item-business-card">
+                                <div>John Smith</div>
+                                <div>CEO, Company Name</div>
+                                <div>contact@company.com</div>
+                            </div>
+                            <div class="kit-item item-logo">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="kit-item item-letterhead">
+                                Company Letterhead
+                            </div>
+                            <div class="kit-item item-envelope">
+                                Envelope
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-info">
+                        <h3>Professional Corporate</h3>
+                        <p>Complete corporate identity package for established businesses</p>
+                        <div class="kit-features">
+                            <span class="feature-tag">Logo Design</span>
+                            <span class="feature-tag">Business Cards</span>
+                            <span class="feature-tag">Letterhead</span>
+                            <span class="feature-tag">Envelopes</span>
+                        </div>
+                    </div>
+                    <div class="kit-overlay">
+                        <h3>Professional Corporate</h3>
+                        <p>Complete corporate identity package for established businesses looking to strengthen their brand presence.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom Logo Design</li>
+                            <li><i class="fas fa-check"></i> Business Card Templates</li>
+                            <li><i class="fas fa-check"></i> Letterhead & Envelope Design</li>
+                            <li><i class="fas fa-check"></i> Brand Color Palette</li>
+                            <li><i class="fas fa-check"></i> Typography Guidelines</li>
+                        </ul>
+                        <div class="view-kit-btn" onclick="event.stopPropagation(); openModal('modal-kit1')">View Full Kit</div>
+                    </div>
+                </div>
+
+                <!-- Brand Kit 2 - Startup Essentials -->
+                <div class="kit-box" onclick="openModal('modal-kit2')">
+                    <div class="kit-preview">
+                        <div class="kit-items">
+                            <div class="kit-item item-business-card">
+                                <div>Sarah Johnson</div>
+                                <div>Founder, Startup Co</div>
+                                <div>hello@startup.com</div>
+                            </div>
+                            <div class="kit-item item-logo">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="kit-item item-letterhead">
+                                Startup Letterhead
+                            </div>
+                            <div class="kit-item item-envelope">
+                                Envelope
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-info">
+                        <h3>Startup Essentials</h3>
+                        <p>Modern branding package perfect for new businesses and startups</p>
+                        <div class="kit-features">
+                            <span class="feature-tag">Logo Design</span>
+                            <span class="feature-tag">Social Media Kit</span>
+                            <span class="feature-tag">Email Signature</span>
+                            <span class="feature-tag">Brand Guide</span>
+                        </div>
+                    </div>
+                    <div class="kit-overlay">
+                        <h3>Startup Essentials</h3>
+                        <p>Modern branding package perfect for new businesses and startups looking to make a strong first impression.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Modern Logo Design</li>
+                            <li><i class="fas fa-check"></i> Social Media Templates</li>
+                            <li><i class="fas fa-check"></i> Email Signature Design</li>
+                            <li><i class="fas fa-check"></i> Basic Brand Guidelines</li>
+                            <li><i class="fas fa-check"></i> Digital Assets Package</li>
+                        </ul>
+                        <div class="view-kit-btn" onclick="event.stopPropagation(); openModal('modal-kit2')">View Full Kit</div>
+                    </div>
+                </div>
+
+                <!-- Brand Kit 3 - Premium Complete -->
+                <div class="kit-box" onclick="openModal('modal-kit3')">
+                    <div class="kit-preview">
+                        <div class="kit-items">
+                            <div class="kit-item item-business-card">
+                                <div>Michael Brown</div>
+                                <div>Director, Premium Brand</div>
+                                <div>info@premium.com</div>
+                            </div>
+                            <div class="kit-item item-logo">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="kit-item item-letterhead">
+                                Premium Letterhead
+                            </div>
+                            <div class="kit-item item-envelope">
+                                Envelope
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-info">
+                        <h3>Premium Complete</h3>
+                        <p>Comprehensive branding solution for businesses wanting the full package</p>
+                        <div class="kit-features">
+                            <span class="feature-tag">Full Stationery</span>
+                            <span class="feature-tag">Social Media</span>
+                            <span class="feature-tag">Presentation</span>
+                            <span class="feature-tag">Brand Book</span>
+                        </div>
+                    </div>
+                    <div class="kit-overlay">
+                        <h3>Premium Complete</h3>
+                        <p>Comprehensive branding solution for businesses wanting the complete package with maximum impact.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Complete Stationery Set</li>
+                            <li><i class="fas fa-check"></i> Social Media Kit (All Platforms)</li>
+                            <li><i class="fas fa-check"></i> Presentation Templates</li>
+                            <li><i class="fas fa-check"></i> Comprehensive Brand Book</li>
+                            <li><i class="fas fa-check"></i> Marketing Materials</li>
+                        </ul>
+                        <div class="view-kit-btn" onclick="event.stopPropagation(); openModal('modal-kit3')">View Full Kit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Explanation -->
+            <div class="service-explanation">
+                <h2 class="section-title">What's Included in a <span>Brand Kit?</span></h2>
+                <p class="section-subtitle">A complete brand identity package that establishes consistency across all your business materials</p>
+                
+                <div class="explanation-grid">
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Logo Design</h3>
+                        <p>Custom logo creation that represents your brand's identity and values</p>
+                    </div>
+                    
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>Business Cards</h3>
+                        <p>Professional business card designs that make lasting impressions</p>
+                    </div>
+                    
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Stationery</h3>
+                        <p>Letterheads, envelopes, and other official business documents</p>
+                    </div>
+                    
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3>Social Media</h3>
+                        <p>Profile images, banners, and post templates for all platforms</p>
+                    </div>
+                    
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Brand Guidelines</h3>
+                        <p>Comprehensive guide to maintain brand consistency</p>
+                    </div>
+                    
+                    <div class="explanation-item">
+                        <div class="explanation-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <h3>Presentation Templates</h3>
+                        <p>Custom PowerPoint or Google Slides templates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LinkedIn Banners Section - Hidden by default -->
+    <section class="linkedin-banners" id="linkedin-banners">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">LinkedIn <span>Banners</span></h2>
+                    <p class="section-subtitle">Standout LinkedIn profile banners that showcase your professional brand</p>
+                </div>
+                <div class="close-section-btn" onclick="closeLinkedInBanners()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="banners-grid">
+                <!-- LinkedIn Banner 1 -->
+                <div class="banner-box banner-design-1" onclick="openModal('modal-banner1')">
+                    <div class="banner-preview">
+                        <div class="banner-pattern"></div>
+                        <div class="banner-content">
+                            <h3>Professional Modern</h3>
+                            <p>Clean design with modern gradient and geometric elements</p>
+                        </div>
+                    </div>
+                    <div class="banner-overlay">
+                        <h3>Professional Modern</h3>
+                        <p>Clean design with modern gradient and geometric elements</p>
+                        <div class="view-banner-btn" onclick="event.stopPropagation(); openModal('modal-banner1')">View Banner</div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Banner 2 -->
+                <div class="banner-box banner-design-2" onclick="openModal('modal-banner2')">
+                    <div class="banner-preview">
+                        <div class="banner-pattern"></div>
+                        <div class="banner-content">
+                            <h3>Corporate Elegance</h3>
+                            <p>Sophisticated design with subtle patterns and professional aesthetic</p>
+                        </div>
+                    </div>
+                    <div class="banner-overlay">
+                        <h3>Corporate Elegance</h3>
+                        <p>Sophisticated design with subtle patterns and professional aesthetic</p>
+                        <div class="view-banner-btn" onclick="event.stopPropagation(); openModal('modal-banner2')">View Banner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Channel Art Section - Hidden by default -->
+    <section class="youtube-channel-art" id="youtube-channel-art">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">YouTube <span>Channel Art</span></h2>
+                    <p class="section-subtitle">Professional YouTube channel banners that attract subscribers and represent your brand</p>
+                </div>
+                <div class="close-section-btn" onclick="closeYoutubeChannelArt()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="youtube-grid">
+                <!-- YouTube Channel Art 1 -->
+                <div class="youtube-box youtube-design-1" onclick="openModal('modal-youtube1')">
+                    <div class="youtube-preview">
+                        <div class="youtube-pattern"></div>
+                        <div class="youtube-content">
+                            <h3>Gaming Channel</h3>
+                            <p>Dynamic design with gaming elements and vibrant colors</p>
+                        </div>
+                    </div>
+                    <div class="youtube-overlay">
+                        <h3>Gaming Channel</h3>
+                        <p>Dynamic design with gaming elements and vibrant colors</p>
+                        <div class="view-youtube-btn" onclick="event.stopPropagation(); openModal('modal-youtube1')">View Art</div>
+                    </div>
+                </div>
+
+                <!-- YouTube Channel Art 2 -->
+                <div class="youtube-box youtube-design-2" onclick="openModal('modal-youtube2')">
+                    <div class="youtube-preview">
+                        <div class="youtube-pattern"></div>
+                        <div class="youtube-content">
+                            <h3>Educational Channel</h3>
+                            <p>Clean, professional design with educational elements</p>
+                        </div>
+                    </div>
+                    <div class="youtube-overlay">
+                        <h3>Educational Channel</h3>
+                        <p>Clean, professional design with educational elements</p>
+                        <div class="view-youtube-btn" onclick="event.stopPropagation(); openModal('modal-youtube2')">View Art</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -2551,6 +3679,94 @@
         </div>
     </div>
 
+    <!-- Fullscreen Modals for Logo Designs -->
+    <div id="modal-logo1" class="modal" onclick="closeModal('modal-logo1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-logo1')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_1280.png" alt="Zen Yoga Studio Logo" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-logo2" class="modal" onclick="closeModal('modal-logo2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-logo2')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2017/01/31/23/42/animal-2028258_1280.png" alt="Brew & Bean Café Logo" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-logo3" class="modal" onclick="closeModal('modal-logo3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-logo3')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.png" alt="Nexus Tech Logo" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-logo4" class="modal" onclick="closeModal('modal-logo4')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-logo4')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/21/01/book-1840614_1280.png" alt="Page Turner Books Logo" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-logo5" class="modal" onclick="closeModal('modal-logo5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-logo5')">&times;</span>
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/18/57/gorilla-1840630_1280.png" alt="Alpha Fitness Logo" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Fullscreen Modals for Brand Kits -->
+    <div id="modal-kit1" class="modal" onclick="closeModal('modal-kit1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-kit1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJhbmQlMjBraXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Professional Corporate Brand Kit" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-kit2" class="modal" onclick="closeModal('modal-kit2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-kit2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJhbmQlMjBraXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Startup Essentials Brand Kit" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-kit3" class="modal" onclick="closeModal('modal-kit3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-kit3')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJhbmQlMjBraXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Premium Complete Brand Kit" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Fullscreen Modals for LinkedIn Banners -->
+    <div id="modal-banner1" class="modal" onclick="closeModal('modal-banner1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-banner1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGlua2VkaW4lMjBiYW5uZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Professional Modern LinkedIn Banner" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-banner2" class="modal" onclick="closeModal('modal-banner2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-banner2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGlua2VkaW4lMjBiYW5uZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Corporate Elegance LinkedIn Banner" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Fullscreen Modals for YouTube Channel Art -->
+    <div id="modal-youtube1" class="modal" onclick="closeModal('modal-youtube1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-youtube1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW91dHViZSUyMGNoYW5uZWwlMjBhcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Gaming Channel YouTube Art" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal-youtube2" class="modal" onclick="closeModal('modal-youtube2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal-youtube2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1611162617263-4ec3060fb3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8eW91dHViZSUyMGNoYW5uZWwlMjBhcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Educational Channel YouTube Art" class="modal-img">
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
@@ -2642,7 +3858,7 @@
             
             // Animation on scroll
             function animateOnScroll() {
-                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post');
+                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post, .logo-box, .kit-box, .banner-box, .youtube-box');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -2656,7 +3872,7 @@
             }
             
             // Set initial state for animated elements
-            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post');
+            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box, .cup-box, .tshirt-box, .instagram-post, .logo-box, .kit-box, .banner-box, .youtube-box');
             animatedElements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
@@ -2669,6 +3885,35 @@
             // Run on scroll
             window.addEventListener('scroll', animateOnScroll);
         });
+
+        // Function to show logo designs section
+        function showLogoDesigns() {
+            const logoSection = document.getElementById('logo-designs');
+            if (logoSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                logoSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: logoSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the logo boxes
+                setTimeout(() => {
+                    const logoBoxes = document.querySelectorAll('.logo-box');
+                    logoBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
 
         // Function to show thumbnail designs section
         function showThumbnailDesigns() {
@@ -2786,6 +4031,111 @@
             }
         }
 
+        // Function to show brand kits section
+        function showBrandKits() {
+            const brandKitsSection = document.getElementById('brand-kits');
+            if (brandKitsSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                brandKitsSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: brandKitsSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the kit boxes
+                setTimeout(() => {
+                    const kitBoxes = document.querySelectorAll('.kit-box');
+                    kitBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to show LinkedIn banners section
+        function showLinkedInBanners() {
+            const linkedinSection = document.getElementById('linkedin-banners');
+            if (linkedinSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                linkedinSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: linkedinSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the banner boxes
+                setTimeout(() => {
+                    const bannerBoxes = document.querySelectorAll('.banner-box');
+                    bannerBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to show YouTube channel art section
+        function showYoutubeChannelArt() {
+            const youtubeSection = document.getElementById('youtube-channel-art');
+            if (youtubeSection) {
+                // Hide other sections
+                hideAllSections();
+                
+                // Show the section
+                youtubeSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: youtubeSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the youtube boxes
+                setTimeout(() => {
+                    const youtubeBoxes = document.querySelectorAll('.youtube-box');
+                    youtubeBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to close logo designs section
+        function closeLogoDesigns() {
+            const logoSection = document.getElementById('logo-designs');
+            if (logoSection) {
+                // Hide the section
+                logoSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
         // Function to close thumbnail designs section
         function closeThumbnailDesigns() {
             const thumbnailSection = document.getElementById('thumbnail-designs');
@@ -2858,13 +4208,71 @@
             }
         }
 
+        // Function to close brand kits section
+        function closeBrandKits() {
+            const brandKitsSection = document.getElementById('brand-kits');
+            if (brandKitsSection) {
+                // Hide the section
+                brandKitsSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to close LinkedIn banners section
+        function closeLinkedInBanners() {
+            const linkedinSection = document.getElementById('linkedin-banners');
+            if (linkedinSection) {
+                // Hide the section
+                linkedinSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to close YouTube channel art section
+        function closeYoutubeChannelArt() {
+            const youtubeSection = document.getElementById('youtube-channel-art');
+            if (youtubeSection) {
+                // Hide the section
+                youtubeSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
         // Function to hide all detail sections
         function hideAllSections() {
             const sections = [
+                'logo-designs',
                 'thumbnail-designs',
                 'cup-designs',
                 'tshirt-designs',
-                'instagram-posts'
+                'instagram-posts',
+                'brand-kits',
+                'linkedin-banners',
+                'youtube-channel-art'
             ];
             
             sections.forEach(sectionId => {
