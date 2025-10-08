@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Designs | Graphic Design Portfolio</title>
+    <title>DaimWorkspace | Graphic Design Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -577,7 +577,7 @@
             opacity: 0.9;
         }
 
-        .view-btn {
+        .view-project-btn {
             align-self: flex-start;
             padding: 8px 20px;
             background-color: var(--primary-color);
@@ -586,9 +586,10 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: var(--transition);
+            cursor: pointer;
         }
 
-        .view-btn:hover {
+        .view-project-btn:hover {
             background-color: var(--dark-color);
             color: white;
             transform: translateY(-3px);
@@ -605,6 +606,206 @@
         .portfolio-cta p {
             font-size: 1.2rem;
             margin-bottom: 20px;
+        }
+
+        /* Thumbnail Designs Section - Hidden by default */
+        .thumbnail-designs {
+            background-color: var(--light-color);
+            position: relative;
+            display: none; /* Hidden by default */
+        }
+
+        .thumbnail-designs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .section-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .close-section-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(108, 99, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .close-section-btn:hover {
+            background: rgba(108, 99, 255, 0.2);
+            transform: rotate(90deg);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .thumbnails-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .thumbnail-box {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 250px;
+            transition: var(--transition);
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .thumbnail-box:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), var(--neon-glow);
+            transform: translateY(-10px);
+        }
+
+        .thumbnail-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .thumbnail-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumbnail-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(108, 99, 255, 0.8), rgba(77, 68, 219, 0.9));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .thumbnail-box:hover .thumbnail-overlay {
+            opacity: 1;
+        }
+
+        .thumbnail-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .thumbnail-overlay p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .view-details-btn {
+            align-self: flex-start;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .view-details-btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fullscreen Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: zoomIn 0.4s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
 
         /* About Section */
@@ -710,212 +911,6 @@
             border-radius: 4px;
             position: relative;
             box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
-        }
-
-        /* Website Design Projects Section */
-        .website-projects {
-            background: linear-gradient(135deg, #0f0c29, #302b63);
-            color: white;
-        }
-
-        .website-projects .section-title {
-            color: white;
-        }
-
-        .website-projects .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .website-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .website-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .website-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), var(--neon-glow);
-        }
-
-        .website-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .website-card-content {
-            padding: 20px;
-        }
-
-        .website-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .website-card p {
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--light-color);
-            position: relative;
-        }
-
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(108, 99, 255, 0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
-            background-size: cover;
-            z-index: 0;
-        }
-
-        .testimonial-slider {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-slide {
-            display: none;
-            animation: fade 0.5s ease;
-        }
-
-        .testimonial-slide.active {
-            display: block;
-        }
-
-        .testimonial-content {
-            background-color: white;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .testimonial-content:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), var(--neon-glow);
-        }
-
-        .testimonial-content p {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .testimonial-content p::before,
-        .testimonial-content p::after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary-color);
-            opacity: 0.3;
-        }
-
-        .testimonial-content p::before {
-            margin-right: 5px;
-        }
-
-        .testimonial-content p::after {
-            margin-left: 5px;
-        }
-
-        .client-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .client-info img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
-        }
-
-        .client-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .client-info p {
-            font-size: 0.9rem;
-            color: var(--gray-color);
-            margin-bottom: 0;
-            font-style: normal;
-        }
-
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-            gap: 20px;
-        }
-
-        .slider-prev, .slider-next {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--gray-color);
-            cursor: pointer;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-prev:hover, .slider-next:hover {
-            color: var(--primary-color);
-            background-color: rgba(108, 99, 255, 0.1);
-            box-shadow: 0 0 10px rgba(108, 99, 255, 0.2);
-        }
-
-        .slider-dots {
-            display: flex;
-            gap: 10px;
-        }
-
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--light-gray);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .slider-dot.active {
-            background-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
-        }
-
-        @keyframes fade {
-            from {opacity: 0.4;}
-            to {opacity: 1;}
         }
 
         /* Contact Section */
@@ -1183,33 +1178,6 @@
             color: var(--primary-color);
         }
 
-        /* Neon Elements */
-        .neon-border {
-            position: relative;
-        }
-
-        .neon-border::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 2px solid transparent;
-            border-radius: var(--border-radius);
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
-            pointer-events: none;
-            animation: neonPulse 2s infinite alternate;
-        }
-
-        @keyframes neonPulse {
-            0% {box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);}
-            100% {box-shadow: 0 0 20px rgba(108, 99, 255, 0.8);}
-        }
-
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero .container,
@@ -1284,7 +1252,7 @@
             }
             
             .portfolio-grid,
-            .website-grid {
+            .thumbnails-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1299,6 +1267,22 @@
                 bottom: -10px;
                 right: -10px;
             }
+            
+            .close-btn {
+                top: -50px;
+                right: 10px;
+            }
+            
+            .close-section-btn {
+                position: relative;
+                margin-top: 20px;
+                align-self: center;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1312,10 +1296,6 @@
             
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .testimonial-content {
-                padding: 30px 20px;
             }
             
             .footer-bottom {
@@ -1435,7 +1415,8 @@
                     <p>Standout LinkedIn profile banners that showcase your professional brand.</p>
                 </div>
             </div>
-       </section>
+        </div>
+    </section>
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
@@ -1461,7 +1442,7 @@
                     <div class="portfolio-overlay">
                         <h3>Gaming Channel Thumbnail</h3>
                         <p>YouTube • Click-through rate increased by 35%</p>
-                        <a href="https://sites.google.com/" class="view-btn">View Project</a>
+                        <div class="view-project-btn" onclick="showThumbnailDesigns()">View Project</div>
                     </div>
                 </div>
                 
@@ -1471,7 +1452,7 @@
                     <div class="portfolio-overlay">
                         <h3>Fitness Brand Post</h3>
                         <p>Instagram • 2.5k likes</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
                 
@@ -1481,7 +1462,7 @@
                     <div class="portfolio-overlay">
                         <h3>Coffee Shop Logo</h3>
                         <p>Brand Identity</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
                 
@@ -1491,7 +1472,7 @@
                     <div class="portfolio-overlay">
                         <h3>YouTube Channel Art</h3>
                         <p>Gaming Channel</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
                 
@@ -1501,7 +1482,7 @@
                     <div class="portfolio-overlay">
                         <h3>Corporate Branding Kit</h3>
                         <p>Business cards, letterhead, and social media templates</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
                 
@@ -1511,7 +1492,7 @@
                     <div class="portfolio-overlay">
                         <h3>Band Merchandise</h3>
                         <p>Custom t-shirt design for music band</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
                 
@@ -1521,12 +1502,85 @@
                     <div class="portfolio-overlay">
                         <h3>Coffee Mug Design</h3>
                         <p>Custom illustration for coffee shop merchandise</p>
-                        <a href="https://i.postimg.cc/NFZRCKx2/aifaceswap-683b18cacf679742e54afc4f4b2b3115-removebg-preview.png" class="view-btn">View Project</a>
+                        <div class="view-project-btn">View Project</div>
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <div class="portfolio-cta">
+                <p>Want to see more of my work?</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
 
-   
+    <!-- Thumbnail Designs Section - Hidden by default -->
+    <section class="thumbnail-designs" id="thumbnail-designs">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Thumbnail <span>Designs</span></h2>
+                    <p class="section-subtitle">Eye-catching YouTube thumbnails that increase click-through rates and engage your audience</p>
+                </div>
+                <div class="close-section-btn" onclick="closeThumbnailDesigns()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="thumbnails-grid">
+                <!-- Thumbnail 1 -->
+                <div class="thumbnail-box" onclick="openModal('modal1')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmMdimp_NsyUBi567rKfinkrm27zOVZ3MddSh8uczyAoN-lbnvyPhrBO5cKBXEeDwa6x8AnxEOroJ990eDk5vyBF6NDsCFP_oynFSTUu6AncMbor8HGhOtlvAJFJ1f43qfWO8b51OUEOZF2eSGv7ae81AbpbPkV664anRGARgJDK6Wo5fxMzviGoif9zlx/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.38_7c40c49f.jpg" alt="Thumbnail Design 1">
+                    <div class="thumbnail-overlay">
+                        <h3>Modern Design</h3>
+                        <p>Clean and professional thumbnail with modern aesthetics</p>
+                        <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal1')">View Details</div>
+                    </div>
+                </div>
+
+                <!-- Thumbnail 2 -->
+                <div class="thumbnail-box" onclick="openModal('modal2')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUFjmJJ_UvG27QKLNTay13Qqfok6VeZDlYvGFzMb79aXA-z-kwa10FO0RRZykuH0J2RreSbYXU-6f9PNj99JmhsJH3j9E4bFKRmEvMaw8ZMZC2yl5LPHAk6vGjqS8A2oRLd6eeAxdRgE5nKkp0Dnj48Jeck6CgYfSN42IXxUrjLJk7WddQwV1F9w0XJ9E1/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.38_28e7827e.jpg" alt="Thumbnail Design 2">
+                    <div class="thumbnail-overlay">
+                        <h3>Bold & Vibrant</h3>
+                        <p>Eye-catching design with vibrant colors and bold typography</p>
+                        <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal2')">View Details</div>
+                    </div>
+                </div>
+
+                <!-- Thumbnail 3 -->
+                <div class="thumbnail-box" onclick="openModal('modal3')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKra9ADjyZxdZ9-xZP74GNkMgBbMdV5YWlatBQ_hBhDIU8HTW-8fn_M8EKdkc2vHQY9sHN0UkQ1wcZGtvzMhcS2tPRe3FFB98EZl39APTtxKKoKKn5b1bPTFKSfun06na7L8Bk48K3ORaIi90u1j14WiJKWZNlCR448FJAIeX30w7AdA_1-pWHRI5_k1Bq/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.39_3558312d.jpg" alt="Thumbnail Design 3">
+                    <div class="thumbnail-overlay">
+                        <h3>Minimalist Style</h3>
+                        <p>Simple yet effective design that communicates clearly</p>
+                        <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal3')">View Details</div>
+                    </div>
+                </div>
+
+                <!-- Thumbnail 4 -->
+                <div class="thumbnail-box" onclick="openModal('modal4')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg413x6L1yX4cwDkBaYE31QK0kB6yjriWkRay8Qya02OVU3Jj23GdEa9bl8VoTSSWwihUXZutLIOxELlwsj_HLX0FGb2nVxyrA7kVsc36OrggHkxHR9TQY4kqYIOtcx8Wo7qPC5cAqDPkV4wVd9p1AQ78R2W1_qYvkRYZb3sUzeIgGhd8sMASpaapz3TOej/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.54_7be20d2f.jpg" alt="Thumbnail Design 4">
+                    <div class="thumbnail-overlay">
+                        <h3>Creative Concept</h3>
+                        <p>Innovative design with unique visual elements</p>
+                        <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal4')">View Details</div>
+                    </div>
+                </div>
+
+                <!-- Thumbnail 5 -->
+                <div class="thumbnail-box" onclick="openModal('modal5')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGcJDdEvmbCGGjytKyc3p2vLuE5ehWtONjwJbDEh5x8ov-UOVhR4Bs7CKvnq2iEUKNtFCj-dEAihZsomTy4nJAtXvijvEVvKZCpye5UR_zGaSVlYgqMvkw3tVkUyDcjNptrN4_WpvImvZ3XMdFoKJfG72-9xHaAqjhmiXEhoTaSBNOexKAacnkpl6hyphenhyphenIdK/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.58_45f29128.jpg" alt="Thumbnail Design 5">
+                    <div class="thumbnail-overlay">
+                        <h3>Professional Layout</h3>
+                        <p>Well-structured design with balanced composition</p>
+                        <div class="view-details-btn" onclick="event.stopPropagation(); openModal('modal5')">View Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -1591,7 +1645,6 @@
         </div>
     </section>
 
-   
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1702,6 +1755,42 @@
         </div>
     </footer>
 
+    <!-- Fullscreen Modals for Thumbnails -->
+    <div id="modal1" class="modal" onclick="closeModal('modal1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmMdimp_NsyUBi567rKfinkrm27zOVZ3MddSh8uczyAoN-lbnvyPhrBO5cKBXEeDwa6x8AnxEOroJ990eDk5vyBF6NDsCFP_oynFSTUu6AncMbor8HGhOtlvAJFJ1f43qfWO8b51OUEOZF2eSGv7ae81AbpbPkV664anRGARgJDK6Wo5fxMzviGoif9zlx/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.38_7c40c49f.jpg" alt="Thumbnail Design 1" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal2" class="modal" onclick="closeModal('modal2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUFjmJJ_UvG27QKLNTay13Qqfok6VeZDlYvGFzMb79aXA-z-kwa10FO0RRZykuH0J2RreSbYXU-6f9PNj99JmhsJH3j9E4bFKRmEvMaw8ZMZC2yl5LPHAk6vGjqS8A2oRLd6eeAxdRgE5nKkp0Dnj48Jeck6CgYfSN42IXxUrjLJk7WddQwV1F9w0XJ9E1/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.38_28e7827e.jpg" alt="Thumbnail Design 2" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal3" class="modal" onclick="closeModal('modal3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKra9ADjyZxdZ9-xZP74GNkMgBbMdV5YWlatBQ_hBhDIU8HTW-8fn_M8EKdkc2vHQY9sHN0UkQ1wcZGtvzMhcS2tPRe3FFB98EZl39APTtxKKoKKn5b1bPTFKSfun06na7L8Bk48K3ORaIi90u1j14WiJKWZNlCR448FJAIeX30w7AdA_1-pWHRI5_k1Bq/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.39_3558312d.jpg" alt="Thumbnail Design 3" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal4" class="modal" onclick="closeModal('modal4')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg413x6L1yX4cwDkBaYE31QK0kB6yjriWkRay8Qya02OVU3Jj23GdEa9bl8VoTSSWwihUXZutLIOxELlwsj_HLX0FGb2nVxyrA7kVsc36OrggHkxHR9TQY4kqYIOtcx8Wo7qPC5cAqDPkV4wVd9p1AQ78R2W1_qYvkRYZb3sUzeIgGhd8sMASpaapz3TOej/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.54_7be20d2f.jpg" alt="Thumbnail Design 4" class="modal-img">
+        </div>
+    </div>
+
+    <div id="modal5" class="modal" onclick="closeModal('modal5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal('modal5')">&times;</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGcJDdEvmbCGGjytKyc3p2vLuE5ehWtONjwJbDEh5x8ov-UOVhR4Bs7CKvnq2iEUKNtFCj-dEAihZsomTy4nJAtXvijvEVvKZCpye5UR_zGaSVlYgqMvkw3tVkUyDcjNptrN4_WpvImvZ3XMdFoKJfG72-9xHaAqjhmiXEhoTaSBNOexKAacnkpl6hyphenhyphenIdK/s320/WhatsApp%20Image%202025-10-07%20at%2017.12.58_45f29128.jpg" alt="Thumbnail Design 5" class="modal-img">
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
@@ -1752,58 +1841,6 @@
                 });
             });
             
-            // Testimonial slider
-            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-            const prevBtn = document.querySelector('.slider-prev');
-            const nextBtn = document.querySelector('.slider-next');
-            const dotsContainer = document.querySelector('.slider-dots');
-            let currentSlide = 0;
-            
-            // Create dots
-            testimonialSlides.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('slider-dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-            
-            const dots = document.querySelectorAll('.slider-dot');
-            
-            function showSlide(index) {
-                testimonialSlides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                testimonialSlides[index].classList.add('active');
-                dots[index].classList.add('active');
-                currentSlide = index;
-            }
-            
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % testimonialSlides.length;
-                showSlide(currentSlide);
-            }
-            
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
-                showSlide(currentSlide);
-            }
-            
-            function goToSlide(index) {
-                showSlide(index);
-            }
-            
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // Auto slide change
-            let slideInterval = setInterval(nextSlide, 5000);
-            
-            // Pause on hover
-            const slider = document.querySelector('.testimonial-slider');
-            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            slider.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
-            
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -1845,7 +1882,7 @@
             
             // Animation on scroll
             function animateOnScroll() {
-                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .website-card');
+                const elements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -1859,7 +1896,7 @@
             }
             
             // Set initial state for animated elements
-            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .website-card');
+            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-content, .contact-info, .contact-form, .thumbnail-box');
             animatedElements.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
@@ -1871,6 +1908,73 @@
             
             // Run on scroll
             window.addEventListener('scroll', animateOnScroll);
+        });
+
+        // Function to show thumbnail designs section
+        function showThumbnailDesigns() {
+            const thumbnailSection = document.getElementById('thumbnail-designs');
+            if (thumbnailSection) {
+                // Show the section
+                thumbnailSection.style.display = 'block';
+                
+                // Smooth scroll to the section
+                window.scrollTo({
+                    top: thumbnailSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Animate the thumbnail boxes
+                setTimeout(() => {
+                    const thumbnailBoxes = document.querySelectorAll('.thumbnail-box');
+                    thumbnailBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.opacity = '1';
+                            box.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 500);
+            }
+        }
+
+        // Function to close thumbnail designs section
+        function closeThumbnailDesigns() {
+            const thumbnailSection = document.getElementById('thumbnail-designs');
+            if (thumbnailSection) {
+                // Hide the section
+                thumbnailSection.style.display = 'none';
+                
+                // Scroll back to portfolio section
+                const portfolioSection = document.getElementById('portfolio');
+                if (portfolioSection) {
+                    window.scrollTo({
+                        top: portfolioSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        }
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>
