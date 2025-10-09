@@ -1001,85 +1001,15 @@
             transform: translateY(-10px);
         }
 
-        .cup-model {
-            position: relative;
+        .cup-box img {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 40px 20px;
-        }
-
-        .cup-display {
-            position: relative;
-            width: 180px;
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cup-shape {
-            position: relative;
-            width: 120px;
-            height: 160px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border-radius: 10px 10px 40px 40px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            object-fit: cover;
             transition: var(--transition);
         }
 
-        .cup-handle {
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 60px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border-radius: 0 15px 15px 0;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .cup-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.7;
-        }
-
-        /* Different black pattern variations */
-        .cup-design-1 .cup-pattern {
-            background: radial-gradient(circle at 30% 30%, rgba(108, 99, 255, 0.3) 0%, transparent 50%),
-                       linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
-        }
-
-        .cup-design-2 .cup-pattern {
-            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%),
-                       linear-gradient(-45deg, transparent 40%, rgba(108, 99, 255, 0.2) 50%, transparent 60%);
-        }
-
-        .cup-design-3 .cup-pattern {
-            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.15) 10px, rgba(255, 255, 255, 0.15) 20px);
-        }
-
-        .cup-design-4 .cup-pattern {
-            background: radial-gradient(circle at 70% 70%, rgba(108, 99, 255, 0.3) 0%, transparent 30%),
-                       radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
-        }
-
-        .cup-design-5 .cup-pattern {
-            background: linear-gradient(90deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%),
-                       linear-gradient(0deg, transparent 40%, rgba(108, 99, 255, 0.2) 50%, transparent 60%);
-        }
-
-        .cup-box:hover .cup-shape {
-            transform: scale(1.1) rotate(5deg);
+        .cup-box:hover img {
+            transform: scale(1.1);
         }
 
         .cup-overlay {
@@ -2808,7 +2738,7 @@
             <div class="section-header">
                 <div>
                     <h2 class="section-title">Cup <span>Designs</span></h2>
-                    <p class="section-subtitle">Beautiful black cup designs perfect for merchandise or gifts</p>
+                    <p class="section-subtitle">Beautiful designs for cups and mugs perfect for merchandise or gifts</p>
                 </div>
                 <div class="close-section-btn" onclick="closeCupDesigns()">
                     <i class="fas fa-times"></i>
@@ -2817,15 +2747,8 @@
             
             <div class="cup-grid">
                 <!-- Cup Design 1 -->
-                <div class="cup-box cup-design-1" onclick="openModal('modal-cup1')">
-                    <div class="cup-model">
-                        <div class="cup-display">
-                            <div class="cup-shape">
-                                <div class="cup-pattern"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                    </div>
+                <div class="cup-box" onclick="openModal('modal-cup1')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4cH0O32LbsTT4WTfJvhFf4ppRjl5sgg1wHxjG1IbOtBhbNh3Mo9togY91F3gmNypEwxzTXwdE2yAP1YZkTqkVXRlNuatdqTwQBl3yU-hgLBBOL631WK7Im1rbMA8BdNwEmRJD0Mk9qMbckZ93EuUcQs4qvHB2kVryKum6hxyXRTqWr2fWI7rKBAZaEzs6/s320/cup1.PNG" alt="Midnight Geometric Cup">
                     <div class="cup-overlay">
                         <h3>Midnight Geometric</h3>
                         <p>Black with purple geometric accents</p>
@@ -2834,15 +2757,8 @@
                 </div>
 
                 <!-- Cup Design 2 -->
-                <div class="cup-box cup-design-2" onclick="openModal('modal-cup2')">
-                    <div class="cup-model">
-                        <div class="cup-display">
-                            <div class="cup-shape">
-                                <div class="cup-pattern"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                    </div>
+                <div class="cup-box" onclick="openModal('modal-cup2')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDb4G9BFNT1g-KDKhGf9v04hR-KztFxhgYFr4-PY2TiUIwmHttNU64toi0uTRGnDGw0NfNsdHT7H9qFcPaPhXu26cw9TRzcwX1_X7XMtKTM4BzAPqLEeHaJNQC4ApuFGzizn62z-wwt1_zEAnb1Y2gNZpzEk_-zTHIOxT289Rp02WV1iUX8rTdjQLK7tZw/s320/cup3.PNG" alt="Onyx Crosshatch Cup">
                     <div class="cup-overlay">
                         <h3>Onyx Crosshatch</h3>
                         <p>Deep black with crosshatch pattern</p>
@@ -2851,15 +2767,8 @@
                 </div>
 
                 <!-- Cup Design 3 -->
-                <div class="cup-box cup-design-3" onclick="openModal('modal-cup3')">
-                    <div class="cup-model">
-                        <div class="cup-display">
-                            <div class="cup-shape">
-                                <div class="cup-pattern"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                    </div>
+                <div class="cup-box" onclick="openModal('modal-cup3')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUJxpQQtHF_30Plu3eq5rMhUUXVk5XXG0SwC9mpbC2jz8C_zwy96WkPKxYglm2K8W663pwy6S5vnOGo_W1Ag0wn8UH7-Rq-Y5m4jkuIhRhbMpEd2LfynXvSSqwypAvNbwnFi3HESjffU4DLb22JQ9Nn-rSQ2FBO2199sHDOzu46I3fAiTJxIlzZXeFKyVT/s320/cup2.PNG" alt="Carbon Stripe Cup">
                     <div class="cup-overlay">
                         <h3>Carbon Stripe</h3>
                         <p>Matte black with subtle stripe pattern</p>
@@ -2868,15 +2777,8 @@
                 </div>
 
                 <!-- Cup Design 4 -->
-                <div class="cup-box cup-design-4" onclick="openModal('modal-cup4')">
-                    <div class="cup-model">
-                        <div class="cup-display">
-                            <div class="cup-shape">
-                                <div class="cup-pattern"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                    </div>
+                <div class="cup-box" onclick="openModal('modal-cup4')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYyO2WlQT-90GiSZPOLsDdAqUoe6quQDRqha6Z0VniKIqvFgObptw1K5XuRk93cNGUjSsg06e8jpLG6nW3yfBtFBdfgxoYoOc5-Gt7gmklUvKgDZgwwtwe6-nyOv00QVFigoTGjE4Xt5cTbG3pSJpEHplQpq8F2w1ewAjDf0ctsy15ULi3jKUnf3Lju_9P/s320/cup4.PNG" alt="Shadow Dots Cup">
                     <div class="cup-overlay">
                         <h3>Shadow Dots</h3>
                         <p>Dark black with radial dot pattern</p>
@@ -2885,15 +2787,8 @@
                 </div>
 
                 <!-- Cup Design 5 -->
-                <div class="cup-box cup-design-5" onclick="openModal('modal-cup5')">
-                    <div class="cup-model">
-                        <div class="cup-display">
-                            <div class="cup-shape">
-                                <div class="cup-pattern"></div>
-                            </div>
-                            <div class="cup-handle"></div>
-                        </div>
-                    </div>
+                <div class="cup-box" onclick="openModal('modal-cup5')">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZ1jz9lTksvszP2_5oIzPcGbWYm6Apu7cT_oe5R5poq1nxe_Ho2csWx1IrwD9KPkb5ii8oYTrwHDXVaY9yfFUIXACN845urKyWatTuOo2tFI9RX0-f5IlHKoJjdraaPwCFp5B3V3WkMK2yrs5pe4c_tIIzOTE6F62uYB0L3ZdqOorA9UkxUONTilFUyKQw/s320/cup.PNG" alt="Ebony Grid Cup">
                     <div class="cup-overlay">
                         <h3>Ebony Grid</h3>
                         <p>Rich black with grid pattern accents</p>
@@ -3719,21 +3614,21 @@
     <div id="modal-kit1" class="modal" onclick="closeModal('modal-kit1')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal('modal-kit1')">&times;</span>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX6VOy3mzjZ1yVvSd2Ea5Iurer4-_hINb3gQ-A2QforpG6rnljGwstLRaaNYkHw7mQ-5aTAqFn83OeIjNM3DnvKo49SjpenV1_Msz90Sy9QiQOBaLztsTAI4OLW16zMo-CBlwAbTjmVxJdmzuBPlPeBFN2PdcnfNt9VPvJkukDYKJhOWiWDoFlUlEBLNwK/s320/brandkit1.PNG" alt="Professional Corporate Brand Kit" class="modal-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGKajS_hzrcVeKKnkYVd8Z8NZErBAbl7LD0MPomezWCUI4wcPAFKHhKoaM2opiBaHJFEt9Z-kjjRQnMBJJ4-VSihwLktL7fZhjRek9sRO3IaltfslBQcE9CTw3aMyj9yj6bIA72So5LPYP6k_4Hup4Z8gi9-8ap3nvOQOV75vJvFZ2GHh_kxhyphenhyphenkzSFDBoa/s603/brandkit3.PNG" alt="Professional Corporate Brand Kit" class="modal-img">
         </div>
     </div>
 
     <div id="modal-kit2" class="modal" onclick="closeModal('modal-kit2')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal('modal-kit2')">&times;</span>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmZDDaaNz_1BLFefld-jMoGiXZGzWtp22zvKLe-u2Bl4MhuTBOvouNDfl5NtdAHpMq6giF2aXTT2o50WP_FB4CrrAVGKFg87r5gRMpY8XplzHeB9YGbS3N8YyzjO5OIAn2ivY8BUfWNWbhUXeJZva7YxL-465z8fTuR-ELs2ldeyftGxEktNEzJkOdp9um/s320/brandkit.PNG" alt="Startup Essentials Brand Kit" class="modal-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX6VOy3mzjZ1yVvSd2Ea5Iurer4-_hINb3gQ-A2QforpG6rnljGwstLRaaNYkHw7mQ-5aTAqFn83OeIjNM3DnvKo49SjpenV1_Msz90Sy9QiQOBaLztsTAI4OLW16zMo-CBlwAbTjmVxJdmzuBPlPeBFN2PdcnfNt9VPvJkukDYKJhOWiWDoFlUlEBLNwK/s320/brandkit1.PNG" alt="Startup Essentials Brand Kit" class="modal-img">
         </div>
     </div>
 
     <div id="modal-kit3" class="modal" onclick="closeModal('modal-kit3')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal('modal-kit3')">&times;</span>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGKajS_hzrcVeKKnkYVd8Z8NZErBAbl7LD0MPomezWCUI4wcPAFKHhKoaM2opiBaHJFEt9Z-kjjRQnMBJJ4-VSihwLktL7fZhjRek9sRO3IaltfslBQcE9CTw3aMyj9yj6bIA72So5LPYP6k_4Hup4Z8gi9-8ap3nvOQOV75vJvFZ2GHh_kxhyphenhyphenkzSFDBoa/s603/brandkit3.PNG" alt="Premium Complete Brand Kit" class="modal-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmZDDaaNz_1BLFefld-jMoGiXZGzWtp22zvKLe-u2Bl4MhuTBOvouNDfl5NtdAHpMq6giF2aXTT2o50WP_FB4CrrAVGKFg87r5gRMpY8XplzHeB9YGbS3N8YyzjO5OIAn2ivY8BUfWNWbhUXeJZva7YxL-465z8fTuR-ELs2ldeyftGxEktNEzJkOdp9um/s320/brandkit.PNG" alt="Premium Complete Brand Kit" class="modal-img">
         </div>
     </div>
 
